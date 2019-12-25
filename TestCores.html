@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Test CORS</title>
+</head>
+<body>
+    <script lang="javascript">
+        $().ready(() => {
+            $.getJSON("http://www.doudsystems.com/myapp/system")
+                .done((res) => console.log(res));
+        });
+    </script>
+</body>
+</html>
