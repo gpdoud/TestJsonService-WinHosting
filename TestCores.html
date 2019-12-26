@@ -7,8 +7,19 @@
 <body>
     <script lang="javascript">
         $().ready(() => {
-            $.getJSON("http://www.doudsystems.com/myapp/system")
-                .done((res) => console.log(res));
+            let author = { key: 'version', value: '1.1.1' };
+            $.ajax({
+                url: "http://www.doudsystems.com/myapp/system/version",
+                method: "POST",
+                contentType: "application/json",
+                data: JSON.stringify(author)
+            })
+                .done((res) => {
+                    console.log(res);
+                    $.getJSON("http://www.doudsystems.com/myapp/system")
+                        .done((res) => console.log(res));
+                });
+
         });
     </script>
 </body>
